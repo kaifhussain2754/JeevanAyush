@@ -1,0 +1,139 @@
+/* src/components/Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f9f9f9; /* Light background */
+  color: #333; /* Dark text for contrast */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 90px;
+}
+
+.navbarLogo img {
+  height: 70px;
+}
+
+/* Center-align the navbar links */
+.navbarLinks {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.navbarLink {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbarLink:hover {
+  color: palevioletred; /* Light blue on hover */
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownIcon {
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 5;
+  transform: scale(0); /* Initially hidden with scale */
+  transform-origin: top; /* Scale from the top */
+  transition: transform 0.3s ease; /* Smooth transition for scale */
+}
+
+.dropdownContent a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.2s ease; /* Smooth background color change */
+}
+
+.dropdownContent a:hover {
+  background-color: #e6e6e6;
+  color: palevioletred;
+}
+
+/* Show dropdown content on hover with zoom effect */
+.dropdown:hover .dropdownContent {
+  display: flex;
+  transform: scale(1); /* Zoom in on hover */
+}
+
+.inquireBtn {
+  background-color: palevioletred;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.inquireBtn:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid palevioletred;
+}
+
+.navbarIcon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between; /* Ensure space is distributed correctly */
+    padding: 0.5rem 1rem; /* Adjust padding for mobile */
+  }
+
+  .navbarLinks {
+    display: none; /* Hide links by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f9f9f9;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbarLinksActive {
+    display: flex; /* Show links when active */
+  }
+
+  .navbarIcon {
+    display: block; /* Show menu icon */
+  }
+
+  .inquireBtn {
+    display: block; /* Show inquire button */
+    margin-left: 10px; /* Margin to separate it from the menu icon */
+  }
+}
