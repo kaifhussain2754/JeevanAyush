@@ -54,7 +54,7 @@
   
   @media (max-width: 768px) {
     .carousel {
-      height: 50vh; /* Further reduce height for smaller screens */
+      height: 60vh; /* Further reduce height for smaller screens */
     }
   
     .image {
@@ -68,7 +68,7 @@
   
   @media (max-width: 480px) {
     .carousel {
-      height: 40vh; /* Height for very small screens */
+      height: 60vh; /* Height for very small screens */
     }
   
     .image {
