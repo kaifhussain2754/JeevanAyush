@@ -1,0 +1,6 @@
+body {
+    background-color: #f9f4f4; /* Set the background color globally */
+    margin: 0; /* Optional: reset default margin */
+    padding: 0; /* Optional: reset default padding */
+    font-family: Arial, sans-serif; /* Optional: set a default font */
+}

@@ -1,0 +1,232 @@
+.adventureTours {
+    text-align: center;
+    font-weight: bold;
+    padding: 30px; /* Increased padding for better top and bottom spacing */
+}
+
+h2{
+    font-weight: bolder;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Increased gap between cards */
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced within card */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cardImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cardContent {
+    margin-top: 15px;
+    flex-grow: 1;
+}
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px; /* Slightly increased for better spacing */
+}
+
+.cardDuration {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px; /* Adjusted for better spacing */
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px; /* More space between duration and actions */
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+.cardDuration:hover {
+    background-color: palevioletred;
+    color: white;
+}
+
+.cardActions {
+    display: flex;
+    flex-direction: column; /* Stacks price and button vertically */
+    align-items: center; /* Center-aligns the content */
+    margin-top: auto; /* Pushes the actions to the bottom of the card */
+}
+
+.bookNowBtn {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    color: #234567;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  .bookNowBtn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: palevioletred;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+  
+  .bookNowBtn span {
+    position: relative;
+    color: #234567;
+  }
+  
+  .bookNowBtn svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  
+  .bookNowBtn:hover:before {
+    width: 100%;
+    background: palevioletred;
+  }
+  
+  .bookNowBtn:hover svg {
+    transform: translateX(0);
+  }
+  
+  .bookNowBtn:active {
+    transform: scale(0.95);
+  }
+  
+
+.adventureTitle {
+    color: rgb(54, 190, 236); /* Color for "Goa Adventure" */
+    font-variant: ini;
+}
+
+.tours {
+    color: palevioletred; /* Color for "Tours" */
+}
+
+.bookNowBtn:hover {
+    color: white;
+}
+
+.cardPrice {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-left: 15px; /* Added space between button and price */
+}
+
+.icon{
+    margin-right: 5px;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .viewAllBtn, .inquireNowBtn {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border-radius: 20px;
+    background: palevioletred;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .viewAllBtn, .inquireNowBtn {
+        padding: 10px 15px;
+        font-size: 16px; /* Slightly smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .viewAllBtn, .inquireNowBtn {
+        padding: 8px 12px;
+        font-size: 14px; /* Even smaller font size */
+        border-radius: 15px; /* Adjust border radius for smaller buttons */
+    }
+}
+
+.viewAllBtn span, .inquireNowBtn span {
+    position: relative;
+    color: white;
+}
+
+.viewAllBtn svg, .inquireNowBtn svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: white;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.viewAllBtn:hover svg, .inquireNowBtn:hover svg {
+    transform: translateX(0);
+}
+
+.viewAllBtn:active, .inquireNowBtn:active {
+    transform: scale(0.95);
+}
+
+  

@@ -1,0 +1,26 @@
+/* src/components/WhatsAppButton.module.css */
+.whatsappButton {
+    display: flex;
+    align-items: center;
+    background-color: #25D366; /* WhatsApp green color */
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it's on top of other elements */
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.whatsappButton:hover {
+    background-color: #128C7E; /* Darker green on hover */
+}
+
+.icon {
+    width: 25px; /* Adjust icon size */
+    height: 25px; /* Adjust icon size */
+    margin-right: 5px; /* Space between icon and text */
+}

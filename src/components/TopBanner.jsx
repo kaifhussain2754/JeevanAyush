@@ -16,7 +16,7 @@ const TopBanner = () => {
     <div className={styles.topBanner}>
       <div className={styles.marqueeContainer}>
         <Marquee pauseOnHover={true} speed={50}>
-          📞 Call Us Now at +91 98900 00119 | Exclusive Offers Available! 
+          📞 Call Us Now at +91 98900 00119 | Exclusive Offers Available! 🔥 
         </Marquee>
       </div>
       <button className={styles.closeButton} onClick={handleCloseBanner}>×</button>
