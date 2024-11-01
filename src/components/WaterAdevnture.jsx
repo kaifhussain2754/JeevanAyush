@@ -1,5 +1,6 @@
 // src/components/WaterAdventure.jsx
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import AOS from 'aos';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
@@ -61,6 +62,8 @@ const watersports = [
 ];
 
 const WaterAdventure = () => {
+    const navigate = useNavigate(); // Initialize useNavigate for navigation
+
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
@@ -94,6 +97,10 @@ const WaterAdventure = () => {
         ]
     };
 
+    const handleBookNowClick = () => {
+        navigate('/book-now'); // Navigate to /book-now directly
+    };
+
     return (
         <div className={styles.adventureTours}>
             {/* Background Video */}
@@ -119,7 +126,10 @@ const WaterAdventure = () => {
                             </p>
                             <div className={styles.cardActions}>
                                 <p className={styles.cardPrice}>{tour.price}</p>
-                                <button className={styles.bookNowBtn}>
+                                <button
+                                    className={styles.bookNowBtn}
+                                    onClick={handleBookNowClick} // Call handleBookNowClick directly
+                                >
                                     <span>BOOK NOW</span>
                                     <svg width="15px" height="10px" viewBox="0 0 13 10">
                                         <path d="M1,5 L11,5" />

@@ -3,12 +3,22 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 import logo from '/logo.png';
+import InquireNowModal from './Inquire'; // Import the modal component
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -19,7 +29,7 @@ const Navbar = () => {
         </a>
       </div>
       <div className={`${styles.navbarLinks} ${isMobileMenuOpen ? styles.navbarLinksActive : ''}`}>
-        <a href="#home" className={styles.navbarLink}>Home</a>
+        <a href="/" className={styles.navbarLink}>Home</a>
         <div className={styles.dropdown}>
           <a href="#honeymoon" className={styles.navbarLink}>
             Goa Honeymoon Package <FaChevronDown className={styles.dropdownIcon} />
@@ -49,10 +59,12 @@ const Navbar = () => {
         </div>
         <a href="#monsoon" className={styles.navbarLink}>Monsoon Tours</a>
       </div>
-      <a href="#inquire" className={styles.inquireBtn}>Inquire Now</a>
+      <a href="#" onClick={openModal} className={styles.inquireBtn}>Inquire Now</a>
       <div className={styles.navbarIcon} onClick={toggleMobileMenu}>
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
+
+      {isModalOpen && <InquireNowModal onClose={closeModal} />} {/* Add modal here */}
     </nav>
   );
 };

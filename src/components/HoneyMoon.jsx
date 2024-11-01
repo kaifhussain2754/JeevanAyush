@@ -1,5 +1,6 @@
 // src/components/GoaAdventureTours.jsx
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS CSS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -58,19 +59,25 @@ const goaPackages = [
 ];
 
 const HoneyMoon = () => {
+    const navigate = useNavigate(); // Initialize useNavigate for navigation
+
     useEffect(() => {
         AOS.init({ duration: 1000 }); // Initialize AOS with animation duration (1000ms)
     }, []);
   
+    const handleBookNowClick = () => {
+        navigate('/book-now'); // Navigate to /book-now directly
+    };
+
     return (
         <div className={styles.adventureTours}>
             <h2>
                 <span className={styles.adventureTitle}>GOA HONEYMOON </span>
                 <span className={styles.tours}>PACKAGE</span>
             </h2>
-            <p style={{color: 'black'}}>Most Bought and Most Rated Tours, Upto 50% Off on Advance Booking.</p>
+            <p style={{ color: 'black' }}>Most Bought and Most Rated Tours, Upto 50% Off on Advance Booking.</p>
             <div className={styles.cardContainer}>
-                {goaPackages.map((tour, index) => ( // Change 'tours' to 'goaPackages'
+                {goaPackages.map((tour, index) => (
                     <div className={styles.card} key={index} data-aos="fade-up">
                         <img src={tour.imageUrl} alt={tour.title} className={styles.cardImage} />
                         <div className={styles.cardContent}>
@@ -81,7 +88,10 @@ const HoneyMoon = () => {
                             </p>
                             <div className={styles.cardActions}>
                                 <p className={styles.cardPrice}>{tour.price}</p>
-                                <button className={styles.bookNowBtn}>
+                                <button
+                                    className={styles.bookNowBtn}
+                                    onClick={handleBookNowClick} // Call handleBookNowClick directly
+                                >
                                     <span>BOOK NOW</span>
                                     <svg width="15px" height="10px" viewBox="0 0 13 10">
                                         <path d="M1,5 L11,5" />

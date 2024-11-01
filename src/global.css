@@ -4,3 +4,6 @@ body {
     padding: 0; /* Optional: reset default padding */
     font-family: Arial, sans-serif; /* Optional: set a default font */
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
